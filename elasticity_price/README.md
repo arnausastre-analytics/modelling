@@ -1,54 +1,46 @@
-# 📈 Elasticidad precio-demanda con datos reales (Online Retail UCI)
+# Elasticidad precio-demanda con datos reales (Online Retail UCI)
 
-## 📝 Contexto del proyecto
+## Contexto del proyecto
 
 Entender cómo responde la demanda al precio es fundamental para cualquier negocio que fije precios de productos o servicios.  
 Este proyecto aplica un enfoque clásico de econometría —**elasticidad precio‑demanda**— utilizando datos reales del dataset *Online Retail*, proveniente de un retailer online del Reino Unido :contentReference[oaicite:1]{index=1}. Computamos el grado de sensibilidad de la demanda al precio a partir de información histórica de ventas y precios.
 
----
+## Objetivos
 
-## 🎯 Objetivos
-
-✅ Estimar una regresión lineal que modele la relación:  
+Estimar una regresión lineal que modele la relación:  
 - El coeficiente β₁ representa la elasticidad precio-demanda.
 - Interpretar los resultados según su signo y magnitud.
 - Analizar gráficamente esta relación.
-
----
-
-## 🔧 Herramientas y técnicas
+  
+## Herramientas y técnicas
 
 - `pandas` para carga, procesado y agregación del dataset.
 - `numpy` para cálculos numéricos.
 - `statsmodels` para regresión lineal y análisis estadístico.
 - `matplotlib` / `seaborn` para visualización y análisis gráfico.
 
----
-
-## 📂 Estructura del repositorio
+## Estructura del repositorio
 
 elasticidad_precio_real/
+
 ├── README.md <-- Este documento
+
 ├── data/
+
 │ └── online_retail.xlsx <-- Dataset original (UCI, 2010–2011)
+
 ├── notebook/
+
 │ └── elasticidad_real.ipynb <-- Notebook paso a paso
+
 └── requirements.txt <-- Dependencias del proyecto
 
-yaml
-Copiar
-Editar
-
----
-
-## 📥 Origen del dataset
+## Origen del dataset
 
 - **Online Retail (UCI ML Repository)**: contiene todas las transacciones entre diciembre 2010 y diciembre 2011 de una tienda online del RU :contentReference[oaicite:2]{index=2}.
 - Incluye columnas: InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country.
 
----
-
-## 🧩 Procesamiento inicial
+## Procesamiento inicial
 
 1. Filtrado legendario de datos:  
    - Quitar transacciones canceladas (InvoiceNo con ‘C’).
@@ -57,10 +49,8 @@ Editar
 2. Agrupar por producto y/o periodo (ej. mensual) para obtener:
    - Precio promedio por unidad  
    - Cantidad vendida total
-
----
-
-## 📊 Modelado y resultados
+     
+## Modelado y resultados
 
 - Ajuste de regresión log-log para estimar elasticidad.
 - Evaluación con métricas: R², p-values, intervalos de confianza.
@@ -70,35 +60,14 @@ Editar
     - Elasticidad < -1 → demanda elástica
     - Elasticidad entre -1 y 0 → demanda inelástica
 
----
-
-## 📥 Uso del proyecto
+## Uso del proyecto
 
 1. Descargar `online_retail.xlsx` y colocarlo en `data/`.
-2. Instalar dependencias:
-pip install -r requirements.txt
+2. Abrir `elasticidad_real.ipynb` en Jupyter o Colab.
+3. Ejecutar sección por sección para reproducir el análisis completo.
 
-yaml
-Copiar
-Editar
-3. Abrir `elasticidad_real.ipynb` en Jupyter o Colab.
-4. Ejecutar sección por sección para reproducir el análisis completo.
-
----
-
-## 💡 Extensiones posibles
+## Extensiones posibles
 
 - Estimar elasticidades por categoría de producto o segmento.
 - Incluir variables de control: promociones, periodo (meses/estacionalidad).
 - Elasticidad cruzada: analizar demanda entre productos relacionados.
-
----
-
-## 👤 Autor
-
-[Tu nombre]  
-*Data Analyst & Business Consultant*  
-🔗 [LinkedIn](https://www.linkedin.com) | [GitHub](https://github.com)
-
----
-
